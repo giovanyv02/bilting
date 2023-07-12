@@ -18,6 +18,5 @@ class ItemImage(db.Model):
     updated_at = db.Column(db.Date, default=datetime.date.today, nullable=False)
 
     #relationships
-    # reviews = db.relationship('Review', back_populates='user')
-    # answer_question = db.relationship(
-    #     'Question', back_populates='question_answer')
+    item = db.relationship('Item', back_populates='item_images')
+    

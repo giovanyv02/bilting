@@ -21,6 +21,8 @@ class Item(db.Model):
     updated_at = db.Column(db.Date, default=datetime.date.today, nullable=False)
 
     #relationships
-    # reviews = db.relationship('Review', back_populates='user')
-    # answer_question = db.relationship(
-    #     'Question', back_populates='question_answer')
+    reviews = db.relationship('Review', back_populates='item')
+    order_item = db.relationship('Item', back_populates='item')
+    cart_item = db.relationship('CartItem', back_populates='item')
+    item_images = db.relationship('ItemImage', back_populates='item')
+    

@@ -19,6 +19,5 @@ class Order(db.Model):
     updated_at = db.Column(db.Date, default=datetime.date.today, nullable=False)
 
     #relationships
-    # reviews = db.relationship('Review', back_populates='user')
-    # answer_question = db.relationship(
-    #     'Question', back_populates='question_answer')
+    order_items = db.relationship('OrderItem', back_populates='order')
+    answer_question = db.relationship('Question', back_populates='question_answer')

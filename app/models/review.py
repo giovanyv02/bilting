@@ -20,7 +20,6 @@ class Review(db.Model):
     created_at = db.Column(db.Date, default=datetime.date.today, nullable=False)
     updated_at = db.Column(db.Date, default=datetime.date.today, nullable=False)
 
-    #relationships
-    # reviews = db.relationship('Review', back_populates='user')
-    # answer_question = db.relationship(
-    #     'Question', back_populates='question_answer')
+    
+    user = db.relationship('User', back_populates='reviews')
+    item = db.relationship('Item', back_populates='reviews')
