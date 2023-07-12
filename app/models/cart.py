@@ -12,7 +12,7 @@ class Cart(db.Model):
 
     #columns
     id = db.Column(db.Integer, primary_key=True)
-    total = db.Column(db.Integer, nullable=False)
+    total = db.Column(db.Integer)
     user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
     created_at = db.Column(db.Date, default=datetime.date.today, nullable=False)
     updated_at = db.Column(db.Date, default=datetime.date.today, nullable=False)

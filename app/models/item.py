@@ -22,7 +22,7 @@ class Item(db.Model):
 
     #relationships
     reviews = db.relationship('Review', back_populates='item')
-    order_item = db.relationship('Item', back_populates='item')
+    order_item = db.relationship('OrderItem', back_populates='item')
     cart_item = db.relationship('CartItem', back_populates='item')
     item_images = db.relationship('ItemImage', back_populates='item')
     

@@ -20,4 +20,4 @@ class Order(db.Model):
 
     #relationships
     order_items = db.relationship('OrderItem', back_populates='order')
-    answer_question = db.relationship('Question', back_populates='question_answer')
+    user = db.relationship('User', back_populates='orders')
