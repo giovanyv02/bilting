@@ -20,3 +20,11 @@ class Cart(db.Model):
     #relationships
     user = db.relationship('User', back_populates='cart')
     cart_items = db.relationship('CartItem', back_populates='cart')
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            'total': self.total,
+            'userId': self.user_id,
+            'cartItems': [{'id': cart.id, 'quantity': cart.quantity, 'itemId': cart.item_id} for cart in self.cart_items]
+        }

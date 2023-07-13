@@ -13,4 +13,8 @@ class OrderForm(FlaskForm):
     adress = StringField("Adress", validation=[DataRequired])
     total = IntegerField("Total", validation=[DataRequired])    
     
+class CartItemForm(FlaskForm):
+    quantiry = IntegerField("Quantity")
+    cart_id = IntegerField('CartId')
+    item_id = IntegerField('ItemId') 
 
