@@ -26,3 +26,14 @@ class Item(db.Model):
     cart_item = db.relationship('CartItem', back_populates='item')
     item_images = db.relationship('ItemImage', back_populates='item')
     
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'sex': self.sex,
+            'category': self.category,
+            'featured':self.featured,
+            'sports': self.sports,
+            'price': self.price,
+            'reviews': [{'id': review.id, 'itemId': review.item_id, 'userId': review.user_id, 'review': review.review, 'reviewImage': review.reviewImage, 'stars': review.stars, 'createdAt': review.created_at, 'updatedAt': review.updated_at } for review in self.reviews],
+            'images':[{'id': image.id, 'url': image.url} for image in self.item_images]
+        }
