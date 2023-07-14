@@ -7,4 +7,4 @@ item_routes = Blueprint('items', __name__)
 @item_routes.route('')
 def items():
     items = Item.query.all()
-    return {'Items': [item.to_dict() for item in items]}
+    return  [item.to_dict() for item in items]
