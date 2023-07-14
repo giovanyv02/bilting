@@ -1,0 +1,45 @@
+.mainPageDiv{
+display: flex;
+    flex-direction: column;
+}
+
+.firstImage{
+    width: 100%;
+    height: 100%;
+}
+
+.shopBySport{
+
+}
+
+.sportDiv{
+    display: flex;
+    /* border: 1px solid green; */
+    column-gap: 2%;
+    height: 300px;
+    width: 200%;
+}
+
+.singleSport{
+
+}
+
+.newArrival{
+    align-self: center
+}
+.sportImage{
+    height: 100%;
+    width: 100%;
+}
+.firstImageDiv{
+    /* border: 1px solid green; */
+    width: 100%;
+    height: 220px;
+}
+.nikeMember{
+
+}
+
+.nikeMemberDiv{
+    
+}
