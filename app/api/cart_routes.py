@@ -8,7 +8,7 @@ cart_routes = Blueprint('carts', __name__)
 @cart_routes.route("")
 @login_required
 def cart():
-    cart = Cart.query.filter(Cart.user_id == current_user.id).all()
+    cart = Cart.query.filter(Cart.user_id == current_user.id).first()
     return cart.to_dict()
 
 @cart_routes.route('/new', methods = ['POST'])

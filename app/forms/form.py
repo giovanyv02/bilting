@@ -14,7 +14,7 @@ class OrderForm(FlaskForm):
     total = IntegerField("Total", validation=[DataRequired])    
     
 class CartItemForm(FlaskForm):
-    quantiry = IntegerField("Quantity")
+    quantity = IntegerField("Quantity")
     cart_id = IntegerField('CartId')
     item_id = IntegerField('ItemId') 
 

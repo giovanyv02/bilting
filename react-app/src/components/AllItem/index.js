@@ -31,6 +31,7 @@ function ItemsPage(){
 
                 <div>
                     <div>
+                       
                         <img src={ele.images[0].url}/>
                     </div>
                     <div>
