@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import MainPage from "./components/MainPage";
 import ItemsPage from "./components/AllItem";
 import ItemDetail from "./components/ItemsDetail";
+import CartComponent from "./components/Cart";
 
 function App() {
   const dispatch = useDispatch();
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path='/cart'>
+            <CartComponent />
           </Route>
           <Route exact path="/" >
             <MainPage />

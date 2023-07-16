@@ -39,6 +39,7 @@ def updateCartItem(id):
     data = request.get_json()
     cartItem.quantity = data.get('quantity')
     db.session.commit()
+    return cartItem.to_dict()
 
 
 
