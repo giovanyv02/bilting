@@ -18,9 +18,9 @@ const updateCartItem = (cartItem) => ({
     cartItem
 });
 
-const removeCartItem = (cartItem) => ({
+const removeCartItem = (cartItemId) => ({
     type: REMOVE_CARTITEM,
-    cartItem
+    cartItemId
 });
 
 export const theCart = () => async dispatch => {
@@ -45,6 +45,15 @@ export const addCartItem = (cartItem) => async dispatch => {
 
     }
 };
+
+export const deleteCartItem = (id) => async dispatch => {
+    const res = await fetch(`/api/cartItems/remove/${id}`, {
+        method: "POST"
+    });
+    if (res.ok) {
+        dispatch(removeCartItem(id));
+    }
+}
 
 export const cartItemToUpdate = (id, item) => async dispatch => {
     const res = await fetch(`/api/cartItems/update/${id}`, {
@@ -74,6 +83,11 @@ const cartReducer = (state = {}, action) => {
             return { ...state, ...np }
         case UPDATE_CARTITEM:
             return { ...state, [action.cartItem.id]: action.cartItem }
+            case REMOVE_CARTITEM:
+                const nState = { ...state };
+    
+                delete nState[action.cartItemId];
+                return nState
         default:
             return state
     }
