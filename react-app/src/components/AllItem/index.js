@@ -20,6 +20,7 @@ function ItemsPage(){
             items = allitems.filter(item=> item.featured === 'new arrival')
         }
     }
+    if (!allitems) return null
    
     
     return (

@@ -5,7 +5,7 @@ const REMOVE_CARTITEM = "carts/REMOVE_CARTITEM";
 
 const loadCart = (cart) => ({
     type: LOAD_CART,
-   cart
+    cart
 });
 
 const addNewCartItem = (cartItem) => ({
@@ -18,15 +18,15 @@ const updateCartItem = (cartItem) => ({
     cartItem
 });
 
-const removeCartItem = (cartItem) => ({
+const removeCartItem = (cartItemId) => ({
     type: REMOVE_CARTITEM,
-    cartItem
+    cartItemId
 });
 
 export const theCart = () => async dispatch => {
     const res = await fetch("/api/cart");
     const cart = await res.json();
-    
+
 
     dispatch(loadCart(cart));
 };
@@ -46,17 +46,49 @@ export const addCartItem = (cartItem) => async dispatch => {
     }
 };
 
-const cartReducer =  (state = {}, action) =>{
+export const deleteCartItem = (id) => async dispatch => {
+    const res = await fetch(`/api/cartItems/remove/${id}`, {
+        method: "POST"
+    });
+    if (res.ok) {
+        dispatch(removeCartItem(id));
+    }
+}
+
+export const cartItemToUpdate = (id, item) => async dispatch => {
+    const res = await fetch(`/api/cartItems/update/${id}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(item)
+    });
+
+    if (res.ok) {
+
+        const cartItem = await res.json()
+
+        dispatch(updateCartItem(cartItem))
+        return res
+    }
+}
+
+const cartReducer = (state = {}, action) => {
     switch (action.type) {
         case LOAD_CART:
             const newState = {};
-            action.cart.cartItems.forEach(ele=>newState[ele.id]=ele)
-            return {...newState}
-            case ADD_CARTITEM:
-                const np = {};
-                np[action.cartItem.id]= action.cartItem;
-                return {...state, ...np}
-            default:
+            action.cart.cartItems.forEach(ele => newState[ele.id] = ele)
+            return { ...newState }
+        case ADD_CARTITEM:
+            const np = {};
+            np[action.cartItem.id] = action.cartItem;
+            return { ...state, ...np }
+        case UPDATE_CARTITEM:
+            return { ...state, [action.cartItem.id]: action.cartItem }
+            case REMOVE_CARTITEM:
+                const nState = { ...state };
+    
+                delete nState[action.cartItemId];
+                return nState
+        default:
             return state
     }
 }

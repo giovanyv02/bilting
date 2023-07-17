@@ -5,7 +5,7 @@ from sqlalchemy.sql import text
 # Adds a demo user, you can add other users here if you want
 def seed_itemImages():
     itemImage1 = ItemImage(
-       item_id = 1, url = 'https://static.nike.com/a/images/c_limit,w_592,f_a…apor-11-womens-hard-court-tennis-shoes-jFxzWK.png'
+       item_id = 1, url = 'https://dks.scene7.com/is/image/GolfGalaxy/CW22881…ite_TOP-alt1?qlt=70&wid=400&fmt=webp&op_sharpen=1'
     )
     itemImage2 = ItemImage(
        item_id = 2, url = 'https://static.nike.com/a/images/c_limit,w_592,f_a…apor-11-womens-hard-court-tennis-shoes-jFxzWK.png'
@@ -13,7 +13,7 @@ def seed_itemImages():
         
     )
     itemImage3 = ItemImage(
-        item_id = 3, url = '	https://static.nike.com/a/images/t_default/856ed19…-mens-dri-fit-short-sleeve-fitness-top-bc8lMz.png'
+        item_id = 3, url = 'https://static.nike.com/a/images/t_default/856ed19…-mens-dri-fit-short-sleeve-fitness-top-bc8lMz.png'
         
     )
     itemImage4 = ItemImage(
