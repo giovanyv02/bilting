@@ -2,25 +2,32 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { theCart, addCartItem } from '../../store/cartReducer';
+import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
+
 
 
 function ItemDetail() {
-
+    const user = useSelector(state=> state.session.user)
+    
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(theCart())
+        if(user){
+
+            dispatch(theCart())
+        }
         
-    }, [dispatch]);
+    }, [dispatch], [user]);
 
     
     const itemId = parseInt(useParams().itemId)
     const item = useSelector(state => state.items[itemId])
     const allCartItems = useSelector(state=>Object.values(state.cart))
     const allCartItemIds = allCartItems.map(ele=> ele.itemId)
-    console.log("all cart items",allCartItems)
-    console.log("all cart itemsId",allCartItemIds)
-
-    const userId = useSelector(state=> state.session.user.id)
+   
+    
+    let userId
+    if(user) userId = user.id
+     
     const shoeSizes = ['M 3.5 / W 5', 'M 5.5 / W 7', 'M 10.5 / W 12', 'M 15 / W 14.5']
     const choice = [0,1,2,3,4,5,6,7]
     const [run, setRun] = useState(false) 
@@ -96,7 +103,7 @@ function ItemDetail() {
                 </select>
                 <button disabled={!userId} onClick={onSubmit}>Add to bag</button>
 
-
+                <NavLink to={`reviews/${item.id}`}>Reviews({item.reviews.length})</NavLink>
             </div>
         </div>
     )
