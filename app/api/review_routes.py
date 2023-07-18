@@ -2,7 +2,7 @@ from flask import Blueprint, request
 from flask_login import login_required, current_user
 from app.models import Review, db
 from app.forms import ReviewForm
-# from .AWS_helpers import get_unique_filename, upload_file_to_s3, remove_file_from_s3
+from .AWS_helpers import get_unique_filename, upload_file_to_s3, remove_file_from_s3
 
 review_routes = Blueprint('reviews', __name__)
 
@@ -26,10 +26,10 @@ def addReview():
     data = form.data
     print("mennn data", data)
     if form.validate_on_submit():
-        # image = data['image']
-        # image.filename = get_unique_filename(image.filename)
-        # upload = upload_file_to_s3(image)
-        # print(upload)
+        image = data['image']
+        image.filename = get_unique_filename(image.filename)
+        upload = upload_file_to_s3(image)
+        print(upload)
 
         newReview = Review(
             user_id = data.current_user.id,
