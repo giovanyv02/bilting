@@ -1,7 +1,7 @@
 """Initial migration.
 
 Revision ID: 912d4f0c1e24
-Revises: ffdc0a98111c
+Revises: 4912c81d0efe
 Create Date: 2023-07-13 09:47:34.832575
 
 """
@@ -16,7 +16,7 @@ SCHEMA = os.environ.get("SCHEMA")
 
 # revision identifiers, used by Alembic.
 revision = '912d4f0c1e24'
-down_revision = 'ffdc0a98111c'
+down_revision = '4912c81d0efe'
 branch_labels = None
 depends_on = None
 
@@ -36,7 +36,7 @@ def upgrade():
     )
     
     if environment == "production":
-            op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
+            op.execute(f"ALTER TABLE items SET SCHEMA {SCHEMA};")
 
     
     op.create_table('carts',
@@ -50,7 +50,7 @@ def upgrade():
     )
     
     if environment == "production":
-            op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
+            op.execute(f"ALTER TABLE carts SET SCHEMA {SCHEMA};")
 
     op.create_table('itemImages',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -63,7 +63,7 @@ def upgrade():
     )
     
     if environment == "production":
-            op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
+            op.execute(f"ALTER TABLE itemImages SET SCHEMA {SCHEMA};")
 
     op.create_table('orders',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -77,7 +77,7 @@ def upgrade():
     )
     
     if environment == "production":
-            op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
+            op.execute(f"ALTER TABLE orders SET SCHEMA {SCHEMA};")
 
     op.create_table('reviews',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -94,7 +94,7 @@ def upgrade():
     )
     
     if environment == "production":
-            op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
+            op.execute(f"ALTER TABLE reviews SET SCHEMA {SCHEMA};")
 
     op.create_table('cartItems',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -109,7 +109,7 @@ def upgrade():
     )
     
     if environment == "production":
-            op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
+            op.execute(f"ALTER TABLE cartItems SET SCHEMA {SCHEMA};")
 
     op.create_table('orderItems',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -124,7 +124,7 @@ def upgrade():
     )
     
     if environment == "production":
-            op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
+            op.execute(f"ALTER TABLE orderItems SET SCHEMA {SCHEMA};")
 
     with op.batch_alter_table('users', schema=None) as batch_op:
         batch_op.add_column(

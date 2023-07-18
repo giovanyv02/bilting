@@ -10,6 +10,7 @@ import nikem from "../../images/nikeMember.webp"
 import { NavLink, Redirect } from 'react-router-dom';
 import { allItems } from "../../store/itemReducer";
 import "./mainpage.css"
+import { allReviews } from "../../store/review";
 
 
 function MainPage(){
@@ -17,6 +18,10 @@ function MainPage(){
     useEffect(()=>{
         dispatch(allItems())
     }, [dispatch]);
+
+    useEffect(()=>{
+        dispatch(allReviews())
+    }, [dispatch])
 
    
     return (
