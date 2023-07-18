@@ -31,7 +31,7 @@ export const allReviews = () => async dispatch => {
 };
 
 export const addReview = (review) => async dispatch => {
-    const res = await fetch("/api/reviews/new", {
+    const res = await fetch('/api/reviews/new', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(review)

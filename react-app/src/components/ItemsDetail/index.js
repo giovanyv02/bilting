@@ -103,7 +103,7 @@ function ItemDetail() {
                 </select>
                 <button disabled={!userId} onClick={onSubmit}>Add to bag</button>
 
-                <NavLink to={`reviews/${item.id}`}>Reviews({item.reviews.length})</NavLink>
+                <NavLink to={`/reviews/${item.id}`}>Reviews({item.reviews.length})</NavLink>
             </div>
         </div>
     )

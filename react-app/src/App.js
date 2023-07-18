@@ -9,6 +9,7 @@ import MainPage from "./components/MainPage";
 import ItemsPage from "./components/AllItem";
 import ItemDetail from "./components/ItemsDetail";
 import CartComponent from "./components/Cart";
+import AllReviews from "./components/Review/AllReview";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,10 +32,13 @@ function App() {
           <Route path='/cart'>
             <CartComponent />
           </Route>
+          <Route path='/reviews/:itemId'>
+            <AllReviews />
+          </Route>
           <Route exact path="/" >
             <MainPage />
           </Route>
-        <Route path='/items/:itemId'>
+        <Route exact path='/items/:itemId'>
           <ItemDetail />
         </Route>
         <Route path='/:newId'>
