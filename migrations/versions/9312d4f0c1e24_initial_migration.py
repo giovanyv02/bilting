@@ -63,7 +63,7 @@ def upgrade():
     )
     
     if environment == "production":
-            op.execute(f"ALTER TABLE itemImages SET SCHEMA {SCHEMA};")
+            op.execute(f"ALTER TABLE itemimages SET SCHEMA {SCHEMA};")
 
     op.create_table('orders',
     sa.Column('id', sa.Integer(), nullable=False),
