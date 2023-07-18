@@ -5,7 +5,7 @@ import datetime
 
 
 class CartItem(db.Model):
-    __tablename__ = 'cartItems'
+    __tablename__ = 'cartitems'
 
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}

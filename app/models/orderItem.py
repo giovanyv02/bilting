@@ -5,7 +5,7 @@ import datetime
 
 
 class OrderItem(db.Model):
-    __tablename__ = 'orderItems'
+    __tablename__ = 'orderitems'
 
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}
