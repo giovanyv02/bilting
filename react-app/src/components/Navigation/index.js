@@ -18,6 +18,8 @@ function Navigation({ isLoaded }){
 				Women
 				Kid
 			</div>
+			<NavLink exact to="/cart">Bag</NavLink>
+
 			<div>
 			{isLoaded && (
 				

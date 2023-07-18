@@ -5,7 +5,7 @@ import datetime
 
 
 class ItemImage(db.Model):
-    __tablename__ = 'itemImages'
+    __tablename__ = 'itemimages'
 
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}
