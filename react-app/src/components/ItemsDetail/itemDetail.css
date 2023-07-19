@@ -40,3 +40,19 @@ display: grid;
     margin: 10% 0;
     align-items: baseline;
 }
+
+.addToBag{
+    background: black;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 15%;
+}
+
+.errors{
+    color: red;
+    margin: 0;
+}
+.pDetail{
+    margin: 0;
+    font-weight: bold;
+}

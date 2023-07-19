@@ -7,6 +7,7 @@ import CreateReview from "../CreateReview";
 import UpdateReview from "../updateReview";
 import DeleteReview from "../DeleteReview";
 import { allReviews } from "../../../store/review";
+import "./allReview.css"
 
 
 const AllReviews = ()=>{
