@@ -21,6 +21,8 @@ function ItemsPage(){
         }
     }
     if (!allitems[0]) return null
+
+    console.log(allItems)
    
     
     return (
