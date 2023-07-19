@@ -6,18 +6,27 @@ import { addReview } from "../../../store/review";
 import './review.css'
 
 export default function CreateReview({id}){
-    const {closeModal} = useModal();
-    const [activeRating, setActiveRating] = useState(0);
-    const [text, setText] = useState("");
-    const [sub, setSub] = useState(false);
-    const history = useHistory();
-    const dispatch = useDispatch();
+  const {closeModal} = useModal();
+  const [activeRating, setActiveRating] = useState(0);
+  const [text, setText] = useState("");
+  const [sub, setSub] = useState(false);
+  const history = useHistory();
+  const dispatch = useDispatch();
+  
+  const user = useSelector(state=>state.session.user)
+   
 
+  
+
+  if(user == null){
+    history.push('/login')
+    closeModal()
+  } 
     let klik = false
     useEffect(()=>{
         if(sub){
-            const nR = {"review": text, "stars":activeRating, "item_id":id}
-            
+            const nR = {"review": text, "stars":activeRating, "itemId":id}
+            console.log("men rrrr ui", nR)
             dispatch(addReview(nR));
             closeModal()
             

@@ -5,10 +5,10 @@ from flask_wtf.file import FileField, FileAllowed, FileRequired
 from app.api.AWS_helpers import ALLOWED_EXTENSIONS
 
 class ReviewForm(FlaskForm):
-    itemId = IntegerField("ItemId", validation=[DataRequired])
+    itemId = IntegerField("ItemId")
     userId = IntegerField("UserId")
-    review = StringField("Review", validation=[DataRequired])
-    stars = IntegerField("Stars", validation=[DataRequired])
+    review = StringField("Review")
+    stars = IntegerField("Stars")
     reviewImage = StringField("ReviewImage")
     # reviewimage = FileField("Image File", validators=[FileAllowed(list(ALLOWED_EXTENSIONS))])
 

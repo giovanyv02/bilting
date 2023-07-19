@@ -18,6 +18,7 @@ const AllReviews = ()=>{
     if(user) userid = user.id 
     const allreview = useSelector(state=> Object.values(state.reviews))
     const reviews = allreview.filter(ele=> ele.itemId === itemid)
+    const userReview = reviews.filter(ele=>ele.userId == userid)
 
     useEffect(()=>{
         dispatch(allReviews())
@@ -25,10 +26,11 @@ const AllReviews = ()=>{
 
     return (
         <div>
-           <OpenModalButton 
+            {!userReview[0] &&  <OpenModalButton 
            buttonText="Create a review"
             modalComponent={<CreateReview id={itemid} />}
-           />
+           />}
+          
             {reviews.map(ele=>
                 <div>
                     <p>{ele.stars}</p>

@@ -25,15 +25,15 @@ function ItemsPage(){
     
     return (
         <>
-            <p>{sort}({items.length})</p>
+            <p className='pLength'>{sort}({items.length})</p>
         <div className='allItemsDiv'>
             {items.map(ele=>
             <NavLink to={`/items/${ele.id}`}>
 
-                <div>
-                    <div>
+                <div className='itemsDiv'>
+                    <div className='imgDiv'>
                        
-                        <img src={ele.images[0].url}/>
+                        <img src={ele.images[0].url} className='allImg'/>
                     </div>
                     <div>
                         <p>{ele.sports}</p>

@@ -1,14 +1,26 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { theCart, addCartItem } from '../../store/cartReducer';
 import { cartItemToUpdate, deleteCartItem } from '../../store/cartReducer';
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
+import LoginFormModal from '../LoginFormModal';
 
 const CartComponent = () => {
+    const history = useHistory();
+    let userId
+    let user = useSelector(state => state.session.user)
+    if(user){
+        userId = user.id
+    }
+    if(!user) history.push('/login')
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(theCart())
+        if(userId){
+
+            dispatch(theCart())
+        }
 
     }, [dispatch]);
 
@@ -22,17 +34,20 @@ const CartComponent = () => {
         }
         dispatch(cartItemToUpdate(e.target.dataset.value, cartItem))
     }
-    function deleteI(e){
+    function deleteI(e) {
         const id = e.target.dataset.value
         dispatch(deleteCartItem(id))
 
     }
+
     const allCartItems = useSelector(state => Object.values(state.cart))
+    
+
     return (
         <div>
             <div>
                 <p>Bags</p>
-                {allCartItems.map(ele =>
+                {user =! null && allCartItems.map(ele =>
                     <div>
                         <div>
                             <img src={ele.item.image} />
@@ -53,6 +68,7 @@ const CartComponent = () => {
             <div>
 
             </div>
+            
         </div>
     )
 }

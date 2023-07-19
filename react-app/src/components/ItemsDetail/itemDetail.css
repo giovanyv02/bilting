@@ -1,0 +1,42 @@
+.a{
+display: grid;
+    grid-template-columns: 55% 30%;
+    /* border: 1px solid black; */
+    margin: 0 10%;
+    grid-column-gap: 15%;
+}
+.imgDiiv{
+    border-radius: 2%;
+    height: 100%;
+    width: 100%;
+
+}
+.detailImgDiv{
+
+}
+.detailDiv{
+display: grid;
+}
+.sizeOption{
+background-color: white;
+    border: 4px solid whitesmoke;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+.allButtonsDiv{
+display: grid;
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr;
+    /* border: 1px solid; */
+    grid-column-gap: 2%;
+    grid-row-gap: 10%;
+}
+
+.sizeOption:hover{
+    border: 2px solid black;
+}
+.quantityDrop{
+    display: flex;
+    margin: 10% 0;
+    align-items: baseline;
+}

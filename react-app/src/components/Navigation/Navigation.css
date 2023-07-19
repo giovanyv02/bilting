@@ -5,3 +5,43 @@
 .hidden {
   display: none;
 }
+
+.nav2{
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid; */
+  margin: 40px 5%;
+  align-items: center;
+}
+.nikelogo{
+
+}
+.nikeLogo{
+  height: 65px;
+  width: 56px;
+  margin: 0;
+}
+.nav2Text{
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+
+}
+.cartDiv{
+  width: 13%;
+ 
+  display: flex;
+  justify-content: space-around;
+}
+.fa-cart-arrow-down{
+color: black
+}
+
+a{
+  color: black;
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: underline;
+}

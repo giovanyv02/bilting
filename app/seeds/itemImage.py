@@ -5,27 +5,27 @@ from sqlalchemy.sql import text
 # Adds a demo user, you can add other users here if you want
 def seed_itemImages():
     itemImage1 = ItemImage(
-       item_id = 1, url = 'https://dks.scene7.com/is/image/GolfGalaxy/CW22881…ite_TOP-alt1?qlt=70&wid=400&fmt=webp&op_sharpen=1'
+       item_id = 1, url = 'https://cdn.discordapp.com/attachments/1130957424296198224/1130966629883318373/item1.png'
     )
     itemImage2 = ItemImage(
-       item_id = 2, url = 'https://static.nike.com/a/images/c_limit,w_592,f_a…apor-11-womens-hard-court-tennis-shoes-jFxzWK.png'
+       item_id = 2, url = 'https://cdn.discordapp.com/attachments/1130957424296198224/1130966630189510717/item2.png'
         
         
     )
     itemImage3 = ItemImage(
-        item_id = 3, url = 'https://static.nike.com/a/images/t_default/856ed19…-mens-dri-fit-short-sleeve-fitness-top-bc8lMz.png'
+        item_id = 3, url = 'https://cdn.discordapp.com/attachments/1130957424296198224/1130966631418433709/item3.png'
         
     )
     itemImage4 = ItemImage(
-        item_id = 4, url = 'https://static.nike.com/a/images/t_default/47ebd6a…/rafa-mens-dri-fit-adv-7-tennis-shorts-4skBJP.png'
+        item_id = 4, url = 'https://cdn.discordapp.com/attachments/1130957424296198224/1130966631703654541/item4.png'
        
     )
     itemImage5 = ItemImage(
-          item_id = 5, url = 'https://static.nike.com/a/images/c_limit,w_592,f_a…cushioned-training-ankle-socks-6-pairs-xql9Hn.png'
+          item_id = 5, url = 'https://cdn.discordapp.com/attachments/1130957424296198224/1130966632018215023/item5.png'
       
     )
     itemImage6 = ItemImage(
-          item_id = 6, url = 'https://static.nike.com/a/images/c_limit,w_592,f_a…it-victory-big-kids-girls-tennis-skirt-CbbV6g.png'
+          item_id = 6, url = 'https://cdn.discordapp.com/attachments/1130957424296198224/1130966631129022605/item6.png'
        
     )
     db.session.add(itemImage1)

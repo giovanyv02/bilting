@@ -1,0 +1,51 @@
+.divImg{
+    padding: 2px;
+    width: 12%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.jordan{
+
+}
+.nav1img{
+    height: 90%;
+}
+.converse{
+
+}
+.divText{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    align-items: baseline;
+}
+.findStore{
+    text-decoration: none;
+    color: black;
+}
+.createRevB{
+    border: none;
+    background-color: white;
+    height: 0;
+}
+
+.nav1{
+    display: flex;
+    justify-content: space-between;
+    /* position: fixed; */
+    /* padding: 2%; */
+    height: 30px;
+    margin: 0 3%;
+}
+.nav1P{
+    margin: 0;
+    font-weight: bolder;
+}
+.hiUser{
+    margin: 0;
+}
+.mainNav1{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}

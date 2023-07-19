@@ -10,6 +10,7 @@ import ItemsPage from "./components/AllItem";
 import ItemDetail from "./components/ItemsDetail";
 import CartComponent from "./components/Cart";
 import AllReviews from "./components/Review/AllReview";
+import Navbar1 from "./components/NavBar1";
 
 function App() {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <>
+    <Navbar1 />
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
