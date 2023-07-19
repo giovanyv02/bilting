@@ -11,18 +11,18 @@ function ItemsPage(){
         dispatch(allItems())
     }, [dispatch]);
 
-    const allitems = useSelector(state=> Object.values(state.items))
+    const allitem = useSelector(state=> Object.values(state.items))
     const sort = useParams().newId
-    let items = allitems.filter(item=> item.sex === sort)
+    let items = allitem.filter(item=> item.sex === sort)
     if (!items[0]){
-        items = allitems.filter(item => item.sports === sort)
+        items = allitem.filter(item => item.sports === sort)
         if(!items[0]){
-            items = allitems.filter(item=> item.featured === 'new arrival')
+            items = allitem.filter(item=> item.featured === 'new arrival')
         }
     }
-    if (!allitems[0]) return null
+    if (!allitem[0]) return null
 
-    console.log("all items ==>",allItems)
+    console.log("all items ==>",allitem)
    
     
     return (
