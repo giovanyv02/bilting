@@ -22,7 +22,7 @@ function ItemsPage(){
     }
     if (!allitems[0]) return null
 
-    console.log(allItems)
+    console.log("all items ==>",allItems)
    
     
     return (
