@@ -1,0 +1,51 @@
+.bagDiv{
+    margin: 0% 5%;
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+.sumarry{
+font-weight: bold;
+}
+.deleteCartItem{
+    border: none;
+    background-color: white;
+}
+.fa-trash-alt{
+    cursor: pointer;
+}
+.mainLeft{
+    display: grid;
+    grid-template-columns: 30% 50%;
+    margin-right: 20%;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 3%
+}
+.tax, .total, .subTotal{
+    display: flex;
+    justify-content: space-between;
+}
+.cartDetailDiv{
+
+}
+.dropDown{
+    border: none;
+}
+.cartQuantity{
+    display: flex;
+}
+.cartImg{
+    width: 100%;
+}
+.cartImgDiv{
+    width: 100%;
+}
+.checkout{
+    margin: 5%;
+    height: 50px;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 90%;
+}

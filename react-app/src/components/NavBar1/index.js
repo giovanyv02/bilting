@@ -3,8 +3,6 @@ import jordan from "../../images/jordanlogo.png"
 import converse from "../../images/converselogo.png"
 import { NavLink, Redirect } from 'react-router-dom';
 import OpenModalButton from "../OpenModalButton";
-import SignupFormModal from "../SignupFormModal";
-import LoginFormModal from "../LoginFormModal";
 import ProfileButton from "../Navigation/ProfileButton";
 import { useSelector } from "react-redux";
 
@@ -19,12 +17,12 @@ export default function Navbar1(){
                 <img src={converse} alt="converse" className="converse nav1img"/>
             </div>
             <div className="divText">
-                <NavLink to='/nike.com/retail' className='findStore'>Find a store</NavLink>
+                <NavLink to={{pathname:"https://www.nike.com/retail"}} target="_blank" className='findStore'>Find a store</NavLink>
                 <p className="nav1P">|</p>
                 {sessionUser && <p className="hiUser">Hi {sessionUser.firstName}</p>}
-                {!sessionUser &&   <OpenModalButton buttonText='Join us'className='nav1ModalButton' modalComponent={<SignupFormModal />} ></OpenModalButton>}
+                {!sessionUser &&  <NavLink to='/signup'>Join Us</NavLink>}
                 <p className="nav1P">|</p>
-                {!sessionUser && <OpenModalButton buttonText='Sign In' className='nav1ModalButton' modalComponent={<LoginFormModal />}></OpenModalButton>}
+                {!sessionUser &&<NavLink to='/login'>Sign In</NavLink>}
                 
                 
             </div>
