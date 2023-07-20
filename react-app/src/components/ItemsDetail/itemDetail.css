@@ -22,6 +22,8 @@ background-color: white;
     border: 4px solid whitesmoke;
     box-shadow: 2px 2px rgba(0, 0, 0, 0.7);
     cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
 }
 .allButtonsDiv{
 display: grid;
