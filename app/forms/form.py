@@ -18,6 +18,7 @@ class OrderForm(FlaskForm):
     
 class CartItemForm(FlaskForm):
     quantity = IntegerField("Quantity")
+    size = StringField('Size')
     cart_id = IntegerField('CartId')
     item_id = IntegerField('ItemId') 
 

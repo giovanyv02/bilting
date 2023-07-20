@@ -26,6 +26,7 @@ def addCartItem():
     if form.validate_on_submit():
         newcartItem = CartItem(
             quantity = data['quantity'],
+            size = data['size'],
             cart_id = data['cart_id'],
             item_id = data['item_id']
         )
@@ -38,6 +39,7 @@ def updateCartItem(id):
     cartItem = CartItem.query.filter(CartItem.id == id).first()
     data = request.get_json()
     cartItem.quantity = data.get('quantity')
+    cartItem.size = data.get('size')
     db.session.commit()
     return cartItem.to_dict()
 

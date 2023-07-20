@@ -1,0 +1,28 @@
+.allRevDiv{
+margin: 0 5%;
+}
+.userName{
+font-weight: bolder;
+}
+.stars{
+display: flex;
+margin: 2% 0;
+}
+
+.userName, .reviewDate, .rev{
+    margin: 0;
+}
+.editRevButton{
+
+}
+
+button{
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.createReviewButton{
+    margin: 2% 5%
+}
