@@ -25,7 +25,7 @@ const CartComponent = () => {
 
     }, [dispatch]);
 
-    const choice = [0, 1, 2, 3, 4, 5, 6, 7]
+    const choice = [1, 2, 3, 4, 5, 6, 7]
     const [quantity, setQuantity] = useState(0)
 
     // const updateQuantity = (e)=> setQuantity(e.target.value)

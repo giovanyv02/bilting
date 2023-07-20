@@ -5,6 +5,7 @@ import { theCart, addCartItem } from '../../store/cartReducer';
 import { allItems } from '../../store/itemReducer';
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 import './itemDetail.css'
+import { cartItemToUpdate } from '../../store/cartReducer';
 
 
 function ItemDetail() {
@@ -61,8 +62,12 @@ function ItemDetail() {
     useEffect(() => {
         if (run && Object.values(newCartItem).length > 2) {
             if (allCartItemIds.includes(itemId)) {
-                const cartItemToUpdate = allCartItems.filter(ele => ele.itemId === itemId && ele.item.size === size)
-                if (cartItemToUpdate[0]) {
+                const cartItmToUpdate = allCartItems.filter(ele => ele.itemId === itemId && ele.item.size === size)
+                if (cartItmToUpdate[0]) {
+                    
+                const total = cartItmToUpdate[0].quantity + parseInt(quantity)
+                
+                dispatch(cartItemToUpdate(cartItmToUpdate[0].id,{'quantity': total, "size": size}))
                     setRun(false)
                 } else {
                     dispatch(addCartItem(newCartItem))
