@@ -26,5 +26,5 @@ class Cart(db.Model):
             "id": self.id,
             'total': self.total,
             'userId': self.user_id,
-            'cartItems': [{'id': cart.id, 'quantity': cart.quantity, 'itemId': cart.item_id, "item":{"sex": cart.item.sex, "category":cart.item.category, "featured":cart.item.featured, "sports":cart.item.sports, "price":cart.item.price, "image":cart.item.item_images[0].url}} for cart in self.cart_items]
+            'cartItems': [{'id': cart.id, 'quantity': cart.quantity, 'size':cart.size, 'itemId': cart.item_id, "item":{"sex": cart.item.sex, "category":cart.item.category, "featured":cart.item.featured, "sports":cart.item.sports, "price":cart.item.price, "image":cart.item.item_images[0].url}} for cart in self.cart_items]
         }

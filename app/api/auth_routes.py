@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, session, request
-from app.models import User, db
+from app.models import User, db, Cart
 from app.forms import LoginForm
 from app.forms import SignUpForm
 from flask_login import current_user, login_user, logout_user, login_required
@@ -60,14 +60,22 @@ def sign_up():
     Creates a new user and logs them in
     """
     form = SignUpForm()
+    print("men form", form.data)
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         user = User(
             username=form.data['username'],
             email=form.data['email'],
+            firstName = form.data['firstName'],
+            lastName = form.data['lastName'],
             password=form.data['password']
         )
         db.session.add(user)
+        db.session.commit()
+        newCart = Cart(
+            user_id = user.id
+        )
+        db.session.add(newCart)
         db.session.commit()
         login_user(user)
         return user.to_dict()

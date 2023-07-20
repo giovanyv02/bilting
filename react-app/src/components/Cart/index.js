@@ -71,8 +71,9 @@ const CartComponent = () => {
                             <img src={ele.item.image} className='cartImg'/>
                         </div>
                         <div className='cartDetailDiv'>
-                            <p>{ele.item.sports} {ele.item.category}</p>
-                            <p>${ele.item.price}</p>
+                            <p className='cartP'>{ele.item.sports} {ele.item.category}</p>
+                            <p className='cartP'>{ele.size}</p>
+                            <p className='cartP'>${ele.item.price}</p>
                             <div className='cartQuantity'>
                             <p>Quantity</p>
                             <select id="dropdown" value={ele.quantity} data-value={ele.id} onChange={updateQuantity} className='dropDown'>
