@@ -29,6 +29,7 @@ class CartItem(db.Model):
             "id": self.id,
             'id': self.id, 
             'quantity': self.quantity,
+            'size': self.size,
               'itemId': self.item_id,
                 "item":{"sex": self.item.sex, "category":self.item.category, "featured":self.item.featured, "sports":self.item.sports, "price":self.item.price, "image":self.item.item_images[0].url}
             }

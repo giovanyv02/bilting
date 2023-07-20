@@ -53,7 +53,8 @@ function ItemDetail() {
         newCartItem = {
             "quantity": parseInt(quantity),
             "item_id": itemId,
-            "cart_id": userId
+            "cart_id": userId,
+            'size': size
         }
     }
     
@@ -62,7 +63,12 @@ function ItemDetail() {
     useEffect(() => {
         if (run && Object.values(newCartItem).length > 2) {
             if (allCartItemIds.includes(itemId)) {
-                const cartItmToUpdate = allCartItems.filter(ele => ele.itemId === itemId && ele.item.size === size)
+                console.log(allCartItemIds)
+                console.log(size === allCartItems[0].size)
+                console.log(allCartItems)
+
+                const cartItmToUpdate = allCartItems.filter(ele => ele.itemId === itemId && ele.size === size)
+                console.log(cartItmToUpdate)
                 if (cartItmToUpdate[0]) {
                     
                 const total = cartItmToUpdate[0].quantity + parseInt(quantity)
