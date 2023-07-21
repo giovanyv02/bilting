@@ -1,0 +1,23 @@
+.delDiv{
+height: 200px;
+    /* border: 1px solid green; */
+    width: 300px;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 3px 3px dimgray;
+}
+.delH3, .delP{
+margin: 0;
+}
+
+.delYes, .delNo{
+text-decoration: none;
+}
+
+
+
