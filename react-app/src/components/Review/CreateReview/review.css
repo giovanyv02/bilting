@@ -5,3 +5,38 @@
 .revStar{
     font-weight: inherit;
 }
+
+.createReviewDiv{
+width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+.submitReviewButton{
+    background-color: whitesmoke;
+    border: 1px solid whitesmoke;
+    text-decoration: none;
+    border-radius: 10px;
+    color: black;
+    height: 25px;
+}
+.reviewTextArea{
+width: 100%;
+    height: 90px;
+}
+.whiteLogo{
+    display: flex;
+}
+.revLogo{
+    width: 20%;
+}
+#modal-content{
+    border-radius: 100%;
+}
