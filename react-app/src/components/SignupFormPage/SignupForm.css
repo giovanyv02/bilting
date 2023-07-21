@@ -1,0 +1,36 @@
+.createAccountInput{
+    width: 100%;
+    border-radius: 10px;
+    font-size: larger;
+    height: 40px;
+}
+.signUpButton{
+    border: 1px solid black;
+    width: 30%;
+    height: 39px;
+    text-decoration: none;
+    background-color: black;
+    color: whitesmoke;
+    border-radius: 20px;
+}
+.signDiv{
+    display: grid;
+    margin: 0px 25%;
+}
+.firstLastDiv{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    justify-content: space-between;
+}
+.signForm{
+    display: grid;
+    padding: 0 2%;
+    grid-row-gap: 15%;
+}
+/* .err{
+    margin: -9% 0;
+} */
+.err, .firstLast{
+    color: red;
+    margin: 0;
+}

@@ -16,14 +16,15 @@ function SignupFormPage() {
   const [errors, setErrors] = useState({});
 
   let err = {};
-  if(!email) err['email'] = 'email is required'
-  if(!email.includes('@')) err['email'] = 'valid email is required'
-  if(firstName.length < 4) err['firstName'] = 'firstName is too short'
-  if(lastName.length < 4) err['lastName'] = 'lastName is too short'
-  if(password.length < 6) err['password'] = 'password is password needs to at least 6 characters'
-  if(password !== confirmPassword) err['confirmPassword'] = 'confirmPassword and password need to match'
+  if (!email) err['email'] = 'email is required'
+  if (!username) err['username'] = 'username is required'
+  if (!email.includes('@')) err['email'] = 'valid email is required'
+  if (firstName.length < 4) err['firstName'] = 'firstName is too short'
+  if (lastName.length < 4) err['lastName'] = 'lastName is too short'
+  if (password.length < 6) err['password'] = 'password is password needs to at least 6 characters'
+  if (password !== confirmPassword) err['confirmPassword'] = 'confirmPassword and password need to match'
 
-  
+
 
   if (sessionUser) return <Redirect to="/" />;
 
@@ -32,85 +33,118 @@ function SignupFormPage() {
     setErrors(err)
     console.log(errors)
     if (!Object.values(err).length) {
-        const data = await dispatch(signUp(username, email, password, firstName, lastName));
-        if (data) {
-          setErrors(data)
-        }
+      const data = await dispatch(signUp(username, email, password, firstName, lastName));
+      if (data) {
+        setErrors(data)
+      }
     }
   };
 
   return (
     <>
-      <h1>Sign Up</h1>
-      <form onSubmit={handleSubmit}>
-        {/* <ul>
+      <div className="signDiv">
+
+        <h1>Now let's make you a Nike Member.</h1>
+        <form onSubmit={handleSubmit} className="signForm">
+          {/* <ul>
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
         </ul> */}
-        <label>
-          Email
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </label>
-        {errors.email && <p>{errors.email}</p>}
-        <label>
-          Username
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </label>
-        {errors.username && <p>{errors.username}</p>}
-        <label>
-          FirstName
-          <input
-            type="text"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-            required
-          />
-        </label>
-        {errors.firstName && <p>{errors.firstName}</p>}
-        <label>
-          LastName
-          <input
-            type="text"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-            required
-          />
-        </label>
-        {errors.lastName && <p>{errors.lastName}</p>}
+          <div>
+            <label>
 
-        <label>
-          Password
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
-        {errors.password && <p>{errors.password}</p>}
+              <input
+                type="text"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="createAccountInput"
+              />
+            </label>
+            {errors.email && <p className="err">{errors.email}</p>}
 
-        <label>
-          Confirm Password
-          <input
-            type="password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-        </label>
-        {errors.confirmPassword && <p>{errors.confirmPassword}</p>}
-        
-        <button type="submit">Sign Up</button>
-      </form>
+          </div>
+          <div>
+
+            <label>
+
+              <input
+                placeholder="Username"
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+
+                className="createAccountInput"
+              />
+            </label>
+            {errors.username && <p className="err">{errors.username}</p>}
+          </div>
+          <div className="firstLastDiv">
+            <div>
+
+              <label>
+
+                <input
+                  placeholder="First Name"
+                  type="text"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  required
+                  className="createAccountInput"
+                />
+              </label>
+              {errors.firstName && <p className="firstLast" >{errors.firstName}</p>}
+            </div>
+            <div>
+
+              <label>
+
+                <input
+                  placeholder="Last Name"
+                  type="text"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  required
+                  className="createAccountInput"
+                />
+              </label>
+              {errors.lastName && <p className="firstLast">{errors.lastName}</p>}
+            </div>
+          </div>
+          <div>
+
+          <label>
+
+            <input
+              placeholder="Password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              className="createAccountInput"
+            />
+          </label>
+          {errors.password && <p className="err">{errors.password}</p>}
+          </div>
+        <div>
+
+          <label>
+
+            <input
+              placeholder="Confirm Password"
+              type="password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+              className="createAccountInput"
+            />
+          </label>
+          {errors.confirmPassword && <p className="err">{errors.confirmPassword}</p>}
+        </div>
+
+          <button type="submit" className="signUpButton">Create Account</button>
+        </form>
+      </div>
     </>
   );
 }
