@@ -17,6 +17,7 @@ function ItemDetail() {
         if (user) {
 
             dispatch(theCart())
+            
         }
 
     }, [dispatch], [user]);
@@ -63,26 +64,27 @@ function ItemDetail() {
     useEffect(() => {
         if (run && Object.values(newCartItem).length > 2) {
             if (allCartItemIds.includes(itemId)) {
-                console.log(allCartItemIds)
-                console.log(size === allCartItems[0].size)
-                console.log(allCartItems)
+               
 
                 const cartItmToUpdate = allCartItems.filter(ele => ele.itemId === itemId && ele.size === size)
-                console.log(cartItmToUpdate)
+                
                 if (cartItmToUpdate[0]) {
                     
                 const total = cartItmToUpdate[0].quantity + parseInt(quantity)
                 
                 dispatch(cartItemToUpdate(cartItmToUpdate[0].id,{'quantity': total, "size": size}))
-                    setRun(false)
+                    setRun(false);
+                    setSize("")
                 } else {
                     dispatch(addCartItem(newCartItem))
                     setRun(false)
+                    setSize("")
                 }
                 
             } else {
                 dispatch(addCartItem(newCartItem))
                 setRun(false)
+                setSize("")
                 
             }
         }
@@ -115,11 +117,11 @@ function ItemDetail() {
             <div className='detailDiv'>
                 <p className='pDetail'>{item.sports} {item.category}</p>
                 <p className='pDetail'>${item.price}</p>
-                {validationErrors["size"] && <p className='errors'>{validationErrors['size']}</p>}
                 <p>Select size</p>
+                {validationErrors["size"] && <p className='errors'>{validationErrors['size']}</p>}
                 <div className='allButtonsDiv'>
                     {shoeSizes.map(shoeSize =>
-                        <button onClick={updateSize} data-value={shoeSize} className='sizeOption'>{shoeSize}</button>
+                        <button onClick={updateSize} data-value={shoeSize} className={shoeSize === size ? "selectedSize" :'sizeOption'}>{shoeSize}</button>
                     )}
                 </div>
                 <div className='quantityDrop'>

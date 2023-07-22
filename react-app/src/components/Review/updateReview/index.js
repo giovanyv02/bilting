@@ -9,11 +9,15 @@ import nikeWhite from "../../../images/whiteLogo.png"
 export default function UpdateReview({ id }) {
   const { closeModal } = useModal();
   const review = useSelector(state => state.reviews[id])
-  console.log("men reviewwww", review)
   const [text, setText] = useState(review.review);
   const [activeRating, setActiveRating] = useState(review.stars);
   const [sub, setSub] = useState(false);
+  const [validation, setValidation] = useState({})
   const dispatch = useDispatch();
+
+  const err = {};
+  if (!text) err['text'] = 'Review text is required'
+  if (!activeRating) err['stars'] = 'Describe your review in stars'
 
   let klik = false
   useEffect(() => {
@@ -26,7 +30,12 @@ export default function UpdateReview({ id }) {
     }
   })
   const submitRev = () => {
-    setSub(true);
+    setValidation(err)
+    
+    if (!Object.values(err).length) {
+      setSub(true);
+
+    }
   }
   return (
     <>
@@ -39,7 +48,9 @@ export default function UpdateReview({ id }) {
 
         
         
-          <textarea placeholder={review.review} onChange={(e) => setText(e.target.value)} className="reviewTextArea"></textarea>
+          <textarea value={text} placeholder="Update Review" onChange={(e) => setText(e.target.value)} className="reviewTextArea"></textarea>
+        {validation.text && <p className="err">{validation.text}</p>}
+
 
       
         <div className="stars" >
@@ -115,8 +126,10 @@ export default function UpdateReview({ id }) {
           </div>
           
         </div>
+        {validation.stars && <p className="err">{validation.stars}</p>}
+
         <div>
-          <button disabled={text.length < 10 || !activeRating} onClick={submitRev} className="submitReviewButton">Update your review</button>
+          <button  onClick={submitRev} className="submitReviewButton">Update your review</button>
         </div>
       </div>
 

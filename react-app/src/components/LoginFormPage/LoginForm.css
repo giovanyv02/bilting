@@ -1,0 +1,13 @@
+.demoUser{
+border: 1px solid black;
+    width: 30%;
+    height: 39px;
+    text-decoration: none;
+    background-color: black;
+    color: whitesmoke;
+    border-radius: 20px;
+}
+.buttons{
+    display: grid;
+    grid-row-gap: 10%;
+}

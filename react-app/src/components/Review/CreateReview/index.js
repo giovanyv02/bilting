@@ -8,13 +8,17 @@ import './review.css'
 
 export default function CreateReview({ id }) {
   const { closeModal } = useModal();
-  const [activeRating, setActiveRating] = useState(0);
   const [text, setText] = useState("");
   const [sub, setSub] = useState(false);
+  const [activeRating, setActiveRating] = useState(0);
+  const [validation, setValidation] = useState({})
   const history = useHistory();
   const dispatch = useDispatch();
 
   const user = useSelector(state => state.session.user)
+  const err = {};
+  if (!text) err['text'] = 'Review text is required'
+  if (!activeRating) err['stars'] = 'Describe your review in stars'
 
 
 
@@ -27,30 +31,37 @@ export default function CreateReview({ id }) {
   useEffect(() => {
     if (sub) {
       const nR = { "review": text, "stars": activeRating, "itemId": id }
-      console.log("men rrrr ui", nR)
       dispatch(addReview(nR));
       closeModal()
 
     }
   })
   const submitRev = () => {
-    setSub(true);
+   
+    setValidation(err)
+    console.log()
+    
+    if (!Object.values(err).length) {
+      setSub(true);
+
+    }
   }
   return (
     <>
       <div className="createReviewDiv" >
-        
-          <h3>Review</h3>
-          <img src={nikeWhite} className="revLogo"/>
-       
 
-        
+        <h3>Review</h3>
+        <img src={nikeWhite} className="revLogo" />
 
-        
-        
-          <textarea placeholder="Leave your review here" onChange={(e) => setText(e.target.value)} className="reviewTextArea"></textarea>
 
-        
+
+
+
+
+        <textarea placeholder="Leave your review here" onChange={(e) => setText(e.target.value)} className="reviewTextArea"></textarea>
+        {validation.text && <p className="err">{validation.text}</p>}
+
+
         <div className="stars">
           <div
             className={activeRating >= 1 ? "filled" : "empty"}
@@ -122,10 +133,10 @@ export default function CreateReview({ id }) {
           >
             <i className="fas fa-star revStar"></i>
           </div>
-          
         </div>
+          {validation.stars && <p className="err">{validation.stars}</p>}
         <div>
-          <button disabled={text.length < 10 || !activeRating} onClick={submitRev} className="submitReviewButton">Submit your review</button>
+          <button onClick={submitRev} className="submitReviewButton">Submit your review</button>
         </div>
       </div>
 

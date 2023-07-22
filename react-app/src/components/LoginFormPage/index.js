@@ -22,36 +22,57 @@ function LoginFormPage() {
     }
   };
 
+  const demoUser = (e)=>{
+    e.preventDefault();
+    dispatch(login("demo@aa.io", "password"))
+  }
+
   return (
     <>
+    <div className="signDiv">
+
       <h1>Log In</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="signForm">
         <ul>
           {errors.map((error, idx) => (
-            <li key={idx}>{error}</li>
+            <li key={idx} className="err">{error} </li>
           ))}
         </ul>
+        <div>
+
         <label>
-          Email
+          
           <input
+          placeholder="Email"
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            className="createAccountInput"
           />
         </label>
+        </div>
+        <div>
+
         <label>
-          Password
+         
           <input
+          placeholder="password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            className="createAccountInput"
           />
         </label>
-        <button type="submit">Log In</button>
+        </div>
+        <div className="buttons">
+
+        <button type="submit" className="signUpButton">Log In</button>
+      <button className="demoUser" onClick={demoUser}>Demo User</button>
+        </div>
       </form>
-      <NavLink to='/signup'>Sign up</NavLink>
+    </div>
     </>
   );
 }
