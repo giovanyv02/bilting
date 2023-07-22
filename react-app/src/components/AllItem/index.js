@@ -11,6 +11,8 @@ function ItemsPage(){
         dispatch(allItems())
     }, [dispatch]);
 
+    
+
     const allitem = useSelector(state=> Object.values(state.items))
     const sort = useParams().newId
     let items = allitem.filter(item=> item.sex === sort)
@@ -22,7 +24,7 @@ function ItemsPage(){
     }
     if (!allitem[0]) return null
 
-    console.log("all items ==>",allitem)
+    
    
     
     return (

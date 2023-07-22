@@ -23,6 +23,8 @@ function MainPage(){
         dispatch(allReviews())
     }, [dispatch])
 
+    
+
    
     return (
         <div className="mainPageDiv">

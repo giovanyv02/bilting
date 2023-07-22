@@ -9,7 +9,6 @@ import nikeWhite from "../../../images/whiteLogo.png"
 export default function UpdateReview({ id }) {
   const { closeModal } = useModal();
   const review = useSelector(state => state.reviews[id])
-  console.log("men reviewwww", review)
   const [text, setText] = useState(review.review);
   const [activeRating, setActiveRating] = useState(review.stars);
   const [sub, setSub] = useState(false);

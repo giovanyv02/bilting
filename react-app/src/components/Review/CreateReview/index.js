@@ -27,7 +27,6 @@ export default function CreateReview({ id }) {
   useEffect(() => {
     if (sub) {
       const nR = { "review": text, "stars": activeRating, "itemId": id }
-      console.log("men rrrr ui", nR)
       dispatch(addReview(nR));
       closeModal()
 

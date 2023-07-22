@@ -30,10 +30,14 @@ const CartComponent = () => {
 
     // const updateQuantity = (e)=> setQuantity(e.target.value)
     function updateQuantity(e) {
+        const data = e.target.dataset.value.split(",")
+        const id = data[0]
+        const size = data[1]
         const cartItem = {
-            'quantity': parseInt(e.target.value)
+            'quantity': parseInt(e.target.value),
+            "size": size
         }
-        dispatch(cartItemToUpdate(e.target.dataset.value, cartItem))
+        dispatch(cartItemToUpdate(id, cartItem))
     }
     function deleteI(e) {
         const id = e.target.dataset.value
@@ -76,7 +80,7 @@ const CartComponent = () => {
                             <p className='cartP'>${ele.item.price}</p>
                             <div className='cartQuantity'>
                             <p>Quantity</p>
-                            <select id="dropdown" value={ele.quantity} data-value={ele.id} onChange={updateQuantity} className='dropDown'>
+                            <select id="dropdown" value={ele.quantity} data-value={[ele.id, ele.size]} onChange={updateQuantity} className='dropDown'>
                                 {choice.map(num =>
                                     <option value={num}>{num}</option>
                                 )}
