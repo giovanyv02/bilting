@@ -21,7 +21,7 @@ function SignupFormPage() {
   if (!email.includes('@')) err['email'] = 'valid email is required'
   if (firstName.length < 4) err['firstName'] = 'firstName is too short'
   if (lastName.length < 4) err['lastName'] = 'lastName is too short'
-  if (password.length < 6) err['password'] = 'password is password needs to at least 6 characters'
+  if (password.length < 6) err['password'] = 'password needs to be at least 6 characters'
   if (password !== confirmPassword) err['confirmPassword'] = 'confirmPassword and password need to match'
 
 
