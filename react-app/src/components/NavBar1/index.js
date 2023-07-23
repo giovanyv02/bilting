@@ -1,6 +1,6 @@
 import "./navbar1.css"
-import jordan from "../../images/jordanlogo.png"
-import converse from "../../images/converselogo.png"
+import jordan from "../../images/jordan.png"
+import converse from "../../images/converse.png"
 import { NavLink, Redirect } from 'react-router-dom';
 import OpenModalButton from "../OpenModalButton";
 import ProfileButton from "../Navigation/ProfileButton";
@@ -27,7 +27,7 @@ export default function Navbar1(){
                 
             </div>
         </div>
-        <hr></hr>
+      
         </div>
             
     )
