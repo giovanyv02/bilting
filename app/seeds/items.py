@@ -28,7 +28,7 @@ def seed_items():
        
     )
     item7 = Item(
-        sex='man', category='pants', featured='new arrival', sports='football', price=2
+        sex='man', category='pants', featured='new arrival', sports='running', price=2
     )
     item8 = Item(
         sex='man', category='shirt', featured='new arrival', sports='football', price=145

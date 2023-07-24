@@ -2,6 +2,9 @@
 display: flex;
     flex-direction: column;
 }
+body{
+    font-family: sans-serif;
+}
 
 .firstImage{
     width: 100%;
@@ -9,19 +12,20 @@ display: flex;
 }
 
 .shopBySport{
-
+    margin: 2% 45%;
+    font-weight: bolder;
+    font-family: sans-serif;
 }
 
 .sportDiv{
-    display: flex;
+   
     /* border: 1px solid green; */
     column-gap: 2%;
-    height: 300px;
-    width: 200%;
+    width: 100%;
 }
 
 .singleSport{
-
+padding: 0 5%;
 }
 
 .newArrival{

@@ -18,7 +18,7 @@ function ItemsPage(){
     let items = allitem.filter(item=> item.sex === sort)
     if (!items[0]){
         items = allitem.filter(item => item.sports === sort)
-        if(!items[0]){
+        if(!items[0] && sort == 'new-arrival'){
             items = allitem.filter(item=> item.featured === 'new arrival')
         }
     }
