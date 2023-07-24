@@ -16,6 +16,7 @@
 .signDiv{
     display: grid;
     margin: 0px 25%;
+    padding-bottom: 50%;
 }
 .firstLastDiv{
     display: grid;

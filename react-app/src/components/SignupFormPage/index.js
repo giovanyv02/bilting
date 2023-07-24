@@ -14,6 +14,7 @@ function SignupFormPage() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [errors, setErrors] = useState({});
+  const [validation, setVavidation]= useState([])
 
   let err = {};
   if (!email) err['email'] = 'email is required'
@@ -31,11 +32,10 @@ function SignupFormPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors(err)
-    console.log(errors)
     if (!Object.values(err).length) {
       const data = await dispatch(signUp(username, email, password, firstName, lastName));
       if (data) {
-        setErrors(data)
+        setVavidation(data)
       }
     }
   };
@@ -46,9 +46,9 @@ function SignupFormPage() {
 
         <h1>Now let's make you a Nike Member.</h1>
         <form onSubmit={handleSubmit} className="signForm">
-          {/* <ul>
-          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-        </ul> */}
+          <ul>
+          {validation.map((error, idx) => <li key={idx} className="err">{error}</li>)}
+        </ul>
           <div>
             <label>
 
