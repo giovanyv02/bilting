@@ -22,3 +22,7 @@ class CartItemForm(FlaskForm):
     cart_id = IntegerField('CartId')
     item_id = IntegerField('ItemId') 
 
+class FavoriteItemForm(FlaskForm):
+    fav_id = IntegerField('FavId')
+    item_id = IntegerField('ItemId')    
+
