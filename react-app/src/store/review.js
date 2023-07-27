@@ -54,18 +54,18 @@ export const deleteReview = (id) => async dispatch => {
     }
 }
 
-export const reviewUpdate = (id, ques) => async dispatch => {
+export const reviewUpdate = (id, rev) => async dispatch => {
     const res = await fetch(`/api/reviews/update/${id}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(ques)
+        body: JSON.stringify(rev)
     });
 
     if (res.ok) {
 
-        const updateQues = await res.json()
+        const updateRev = await res.json()
 
-        dispatch(updateReview(updateQues))
+        dispatch(updateReview(updateRev))
         return res
     }
 }
