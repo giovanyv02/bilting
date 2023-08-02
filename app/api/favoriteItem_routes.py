@@ -18,7 +18,7 @@ def removeFavoriteItems(id):
     return {'message': 'Successfully Deleted' }
 
 
-@favoriteItem_routes('/new', methods = ['POST'])
+@favoriteItem_routes.route('/new', methods = ['POST'])
 def addFavItem():
     form = FavoriteItemForm()
     form['csrf_token'].data = request.cookies['csrf_token']
