@@ -7,6 +7,8 @@ from .cartItems import seed_cartItems, undo_cartItems
 from .orders import seed_orders, undo_orders
 from .orderItems import seed_orderItems, undo_orderItems
 from .itemImage import seed_itemImages, undo_itemImages
+from .favorite import seed_favorites, undo_favorites
+from .favoriteItem import seed_favoriteItems, undo_favoriteItems
 
 from app.models.db import db, environment, SCHEMA
 
@@ -25,6 +27,8 @@ def seed():
         # Make sure to add all your other model's undo functions below
         undo_orderItems()
         undo_orders()
+        undo_favoriteItems()
+        undo_favorites()
         undo_cartItems()
         undo_carts()
         undo_reviews()
@@ -37,6 +41,8 @@ def seed():
     seed_reviews()
     seed_carts()
     seed_cartItems()
+    seed_favorites()
+    seed_favoriteItems()
     seed_orders()
     seed_orderItems()
     # Add other seed functions here

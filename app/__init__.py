@@ -11,6 +11,8 @@ from .api.item_routes import item_routes
 from .api.cart_routes import cart_routes
 from .api.cartItem_routes import cartItem_routes
 from .api.review_routes import review_routes
+from .api.favoriteItem_routes import favoriteItem_routes
+from .api.favorite_routes import favorite_routes
 from .seeds import seed_commands
 from .config import Config
 
@@ -36,6 +38,8 @@ app.register_blueprint(item_routes, url_prefix='/api/items')
 app.register_blueprint(cart_routes, url_prefix='/api/cart')
 app.register_blueprint(cartItem_routes, url_prefix='/api/cartItems')
 app.register_blueprint(review_routes, url_prefix='/api/reviews')
+app.register_blueprint(favorite_routes, url_prefix='/api/favorite')
+app.register_blueprint(favoriteItem_routes, url_prefix='/api/favoriteItems')
 db.init_app(app)
 Migrate(app, db)
 

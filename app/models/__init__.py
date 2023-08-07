@@ -7,4 +7,6 @@ from .itemImage import ItemImage
 from .order import Order
 from .orderItem import OrderItem
 from .review import Review
+from .favorite import Favorite
+from .favoriteItem import FavoriteItem
 from .db import environment, SCHEMA

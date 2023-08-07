@@ -25,6 +25,7 @@ class Item(db.Model):
     order_item = db.relationship('OrderItem', back_populates='item')
     cart_item = db.relationship('CartItem', back_populates='item')
     item_images = db.relationship('ItemImage', back_populates='item')
+    fav_item = db.relationship('FavoriteItem', back_populates='item')
     
     def to_dict(self):
         return {

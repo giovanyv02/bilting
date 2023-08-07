@@ -9,6 +9,7 @@ import MainPage from "./components/MainPage";
 import ItemsPage from "./components/AllItem";
 import ItemDetail from "./components/ItemsDetail";
 import CartComponent from "./components/Cart";
+import FavoritesItemsPage from "./components/Favorite";
 import AllReviews from "./components/Review/AllReview";
 import Navbar1 from "./components/NavBar1";
 
@@ -33,6 +34,9 @@ function App() {
           </Route>
           <Route path='/cart'>
             <CartComponent />
+          </Route>
+          <Route path='/favorite'>
+            <FavoritesItemsPage />
           </Route>
           <Route path='/reviews/:itemId'>
             <AllReviews />

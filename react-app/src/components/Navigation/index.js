@@ -6,6 +6,7 @@ import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import nikeLogo from '../../images/nikeLogo.jpg'
 import { theCart } from '../../store/cartReducer';
+import { theFav } from '../../store/favoriteReducer';
 
 function Navigation({ isLoaded }){
 	const sessionUser = useSelector(state => state.session.user);
@@ -18,6 +19,8 @@ function Navigation({ isLoaded }){
    
         if (user && !cart[0] && run) {
             dispatch(theCart())
+			dispatch(theFav())
+
 			setRun(false)
 
         }
@@ -44,6 +47,9 @@ function Navigation({ isLoaded }){
 			</div>
 
 			<div className='cartDiv'>
+				<NavLink exact to='/favorite'>
+				<i class="fa-regular fa-heart"></i>
+				</NavLink>
 			<NavLink exact to="/cart">
 			<i class="fas fa-cart-arrow-down">{quantity && quantity}</i>
 			</NavLink>
