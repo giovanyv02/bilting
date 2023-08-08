@@ -67,10 +67,11 @@ const favoriteReducer = (state = {}, action) => {
             np[action.favoriteItem.id] = action.favoriteItem;
             return { ...state, ...np }
         case REMOVE_FavoriteItem:
-            const nState = { ...state };
-
-            delete nState[action.favoriteItemId];
-            return nState
+            let nState = Object.values(state);
+            let nState1 = nState.filter(ele=>ele.itemId == action.favoriteItemId)
+            const mstate = {...state}
+            delete mstate[nState1[0].id]
+            return mstate
         default:
             return state
     }

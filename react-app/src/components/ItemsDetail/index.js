@@ -3,6 +3,7 @@ import { useParams, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { theCart, addCartItem } from '../../store/cartReducer';
 import { allItems } from '../../store/itemReducer';
+import { addFavoriteItem, deleteFavoriteItem } from '../../store/favoriteReducer';
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 import './itemDetail.css'
 import { cartItemToUpdate } from '../../store/cartReducer';
@@ -32,11 +33,14 @@ function ItemDetail() {
     const item = useSelector(state => state.items[itemId])
     const allCartItems = useSelector(state => Object.values(state.cart))
     const allCartItemIds = allCartItems.map(ele => ele.itemId)
+    const allUserFavItems = useSelector(state => Object.values(state.favorite))
+    const allUserFavItemIds = allUserFavItems.map(ele=> ele.itemId)
 
     
     
     let userId
     if (user) userId = user.id
+    
     
     const shoeSizes = ['M 3.5 / W 5', 'M 5.5 / W 7', 'M 10.5 / W 12', 'M 15 / W 14.5']
     const choice = [0, 1, 2, 3, 4, 5, 6, 7]
@@ -106,6 +110,18 @@ function ItemDetail() {
 
     }
 
+    const addFavItem = (e)=>{
+        if (!userId) history.push('/login')
+        e.preventDefault();
+    const fav = {"item_id": itemId}
+    dispatch(addFavoriteItem(fav))    
+    }
+
+    const removeFavItem = (e)=>{
+        e.preventDefault();
+        dispatch(deleteFavoriteItem(itemId))
+    }
+
     if(!item){
         return null
     }
@@ -136,6 +152,9 @@ function ItemDetail() {
                 {validationErrors["quantity"]&& <p className='errors'>{validationErrors['quantity']}</p>}
 
                 <button onClick={onSubmit} className='addToBag'>Add to bag</button>
+                {user && allUserFavItemIds.includes(itemId) && <button onClick={removeFavItem} className='addToFav'>Favorite <i class="fa-solid fa-heart"></i></button>}
+                {user && !allUserFavItemIds.includes(itemId) && <button onClick={addFavItem} className='addToFav'>Favorite <i class="fa-regular fa-heart"></i></button>}
+                {!user && <button onClick={addFavItem} className='addToFav'>Favorite <i class="fa-regular fa-heart"></i></button>}
 
                 <NavLink to={`/reviews/${item.id}`}>Reviews({item.reviews.length})</NavLink>
             </div>
