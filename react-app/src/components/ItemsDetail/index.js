@@ -3,6 +3,7 @@ import { useParams, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { theCart, addCartItem } from '../../store/cartReducer';
 import { allItems } from '../../store/itemReducer';
+import { addFavoriteItem, deleteFavoriteItem } from '../../store/favoriteReducer';
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 import './itemDetail.css'
 import { cartItemToUpdate } from '../../store/cartReducer';
@@ -109,6 +110,18 @@ function ItemDetail() {
 
     }
 
+    const addFavItem = (e)=>{
+        if (!userId) history.push('/login')
+        e.preventDefault();
+    const fav = {"item_id": itemId}
+    dispatch(addFavoriteItem(fav))    
+    }
+
+    const removeFavItem = (e)=>{
+        e.preventDefault();
+        dispatch(deleteFavoriteItem(itemId))
+    }
+
     if(!item){
         return null
     }
@@ -139,8 +152,9 @@ function ItemDetail() {
                 {validationErrors["quantity"]&& <p className='errors'>{validationErrors['quantity']}</p>}
 
                 <button onClick={onSubmit} className='addToBag'>Add to bag</button>
-                {user && allUserFavItemIds.includes(itemId) && <button className='addToFav'>Favorite <i class="fa-solid fa-heart"></i></button>}
-                {!user || !allUserFavItemIds.includes(itemId) && <button className='addToFav'>Favorite <i class="fa-regular fa-heart"></i></button>}
+                {user && allUserFavItemIds.includes(itemId) && <button onClick={removeFavItem} className='addToFav'>Favorite <i class="fa-solid fa-heart"></i></button>}
+                {user && !allUserFavItemIds.includes(itemId) && <button onClick={addFavItem} className='addToFav'>Favorite <i class="fa-regular fa-heart"></i></button>}
+                {!user && <button onClick={addFavItem} className='addToFav'>Favorite <i class="fa-regular fa-heart"></i></button>}
 
                 <NavLink to={`/reviews/${item.id}`}>Reviews({item.reviews.length})</NavLink>
             </div>
