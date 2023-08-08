@@ -11,6 +11,14 @@ display: grid;
     width: 100%;
 
 }
+.addToFav{
+    color: black;
+    cursor: pointer;
+    margin-bottom: 15%;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 20px;
+}
 .detailImgDiv{
 
 }
@@ -58,7 +66,7 @@ display: grid;
     background: black;
     color: white;
     cursor: pointer;
-    margin-bottom: 15%;
+    margin-bottom: 2%;
     text-decoration: none;
     border-radius: 20px;
 }
