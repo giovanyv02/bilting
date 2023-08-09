@@ -12,6 +12,7 @@ import CartComponent from "./components/Cart";
 import FavoritesItemsPage from "./components/Favorite";
 import AllReviews from "./components/Review/AllReview";
 import Navbar1 from "./components/NavBar1";
+import FooterComponent from "./components/footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -52,6 +53,7 @@ function App() {
         </Route>
         </Switch>
       )}
+      <FooterComponent></FooterComponent>
     </>
   );
 }

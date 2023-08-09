@@ -4,6 +4,9 @@ import { logout } from "../../store/session";
 import OpenModalButton from "../OpenModalButton";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
+import { NavLink } from "react-router-dom";
+import { removeTheCart } from "../../store/cartReducer";
+import "./profileButton.css"
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -32,24 +35,25 @@ function ProfileButton({ user }) {
   const handleLogout = (e) => {
     e.preventDefault();
     dispatch(logout());
+    dispatch(removeTheCart())
   };
 
-  const ulClassName = "profile-dropdown" + (showMenu ? "" : " hidden");
+  const ulClassName = "profile-dropdown" + (showMenu ? " showMenu" : " hidden");
   const closeMenu = () => setShowMenu(false);
 
   return (
     <>
       <button onClick={openMenu}>
-        <i className="fas fa-user-circle" />
+      <i class="fa-solid fa-user"></i>
       </button>
-      <ul className={ulClassName} ref={ulRef}>
+      <div className={ulClassName} ref={ulRef}>
         {user ? (
           <>
-            <li>{user.username}</li>
-            <li>{user.email}</li>
-            <li>
-              <button onClick={handleLogout}>Log Out</button>
-            </li>
+            <div><NavLink to='/favorite'>Favorites</NavLink></div>
+            <div><NavLink to='/order'>Orders</NavLink></div>
+            <div>
+              <button onClick={handleLogout} className="logOut">Log out <i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+            </div>
           </>
         ) : (
           <>
@@ -66,7 +70,7 @@ function ProfileButton({ user }) {
             />
           </>
         )}
-      </ul>
+      </div>
     </>
   );
 }
