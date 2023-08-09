@@ -2,6 +2,11 @@ const LOAD_CART = "carts/LOAD_CART";
 const ADD_CARTITEM = "carts/ADD_CARTITEM";
 const UPDATE_CARTITEM = "carts/UPDATE_CARTITEM";
 const REMOVE_CARTITEM = "carts/REMOVE_CARTITEM";
+const REMOVE_CART = "carts/REMOVE_CART";
+
+const removeCart = () => ({
+    type: REMOVE_CART
+})
 
 const loadCart = (cart) => ({
     type: LOAD_CART,
@@ -45,6 +50,10 @@ export const addCartItem = (cartItem) => async dispatch => {
     }
 };
 
+export const removeTheCart = () => async dispatch => {
+    dispatch(removeCart())
+}
+
 export const deleteCartItem = (id) => async dispatch => {
     const res = await fetch(`/api/cartItems/remove/${id}`, {
         method: "POST"
@@ -82,11 +91,14 @@ const cartReducer = (state = {}, action) => {
             return { ...state, ...np }
         case UPDATE_CARTITEM:
             return { ...state, [action.cartItem.id]: action.cartItem }
-            case REMOVE_CARTITEM:
-                const nState = { ...state };
-    
-                delete nState[action.cartItemId];
-                return nState
+        case REMOVE_CARTITEM:
+            const nState = { ...state };
+
+            delete nState[action.cartItemId];
+            return nState
+        case REMOVE_CART:
+            const blankState = {}
+            return blankState
         default:
             return state
     }

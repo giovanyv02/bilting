@@ -3,6 +3,7 @@ import { login } from "../../store/session";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
+import { theCart } from "../../store/cartReducer";
 import './LoginForm.css';
 
 function LoginFormPage() {
@@ -19,12 +20,20 @@ function LoginFormPage() {
     const data = await dispatch(login(email, password));
     if (data) {
       setErrors(data);
+    }else{
+      dispatch(theCart())
     }
   };
 
-  const demoUser = (e)=>{
+  const demoUser = async (e)=>{
     e.preventDefault();
-    dispatch(login("demo@aa.io", "password"))
+    const data = await dispatch(login("demo@aa.io", "password"))
+    if(data){
+      setErrors(data);
+    }else{
+      dispatch(theCart())
+
+    }
   }
 
   return (
