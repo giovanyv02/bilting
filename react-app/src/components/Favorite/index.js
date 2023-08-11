@@ -35,7 +35,8 @@ function FavoritesItemsPage(){
             <p className='pLength'>My Favorites({allFavItems.length})</p>
         <div className='allItemsDiv'>
             {allFavItems.map(ele=>
-            <NavLink to={`/items/${ele.id}`}>
+            <NavLink to={`/items/${ele.itemId}`}>
+                
 
                 <div className='itemsDiv'>
                     <div className='imgDiv'>
