@@ -37,6 +37,7 @@ function FavoritesItemsPage(){
             {allFavItems.map(ele=>
             <NavLink to={`/items/${ele.itemId}`}>
                 
+                
 
                 <div className='itemsDiv'>
                     <div className='imgDiv'>
