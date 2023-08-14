@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom"
 import "./footer.css"
 function FooterComponent() {
     return (
-        <>
+        <footer>
             <div className="footer-container">
                 <div>
                     <p className="footerP">Technologies used</p>
@@ -17,10 +17,10 @@ function FooterComponent() {
                 <div>
                     <p className="footerP">Contact me</p>
                     <div className="contact">
-                        <NavLink to={{ pathname: "https://giovanyv02.github.io/" }} target="_blank" className='findStore'>My Portfolio</NavLink>
-                        <NavLink to={{ pathname: "https://github.com/giovanyv02" }} target="_blank" className='findStore'><i class="fa-brands fa-github"></i></NavLink>
-                        <NavLink to={{ pathname: "https://www.linkedin.com/in/giovany-victor-33226a266/" }} target="_blank" className='findStore'><i class="fa-brands fa-linkedin"></i></NavLink>
-                        <NavLink to={{ pathname: "https://wellfound.com/u/giovany-victor" }} target="_blank" className='findStore'><i class="fa-brands fa-angellist"></i></NavLink>
+                        <NavLink to={{ pathname: "https://giovanyv02.github.io/" }} target="_blank" className='footLink'>My Portfolio</NavLink>
+                        <NavLink to={{ pathname: "https://github.com/giovanyv02" }} target="_blank" className='footLink'><i class="fa-brands fa-github"></i></NavLink>
+                        <NavLink to={{ pathname: "https://www.linkedin.com/in/giovany-victor-33226a266/" }} target="_blank" className='footLink'><i class="fa-brands fa-linkedin"></i></NavLink>
+                        <NavLink to={{ pathname: "https://wellfound.com/u/giovany-victor" }} target="_blank" className='footLink'><i class="fa-brands fa-angellist"></i></NavLink>
                         <i class="fa-regular fa-envelope" >victorgiovany02@gmail.com</i>
 
 
@@ -31,7 +31,7 @@ function FooterComponent() {
 
 
             </div>
-        </>
+        </footer>
     )
 }
 
