@@ -44,6 +44,7 @@ function App() {
           </Route>
           <Route exact path="/" >
             <MainPage />
+        <FooterComponent></FooterComponent>
           </Route>
         <Route exact path='/items/:itemId'>
           <ItemDetail />
@@ -53,7 +54,6 @@ function App() {
         </Route>
         </Switch>
       )}
-      <FooterComponent></FooterComponent>
     </>
   );
 }

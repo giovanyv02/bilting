@@ -24,7 +24,7 @@ function FavoritesItemsPage(){
     
 
     const allFavItems = useSelector(state=> Object.values(state.favorite))
-    console.log(allFavItems)
+    
    
 
     

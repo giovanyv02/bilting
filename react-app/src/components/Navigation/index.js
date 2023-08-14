@@ -28,7 +28,7 @@ function Navigation({ isLoaded }){
 		if(cart[0]){
 			quantity = cart.reduce((a,b)=> a + b.quantity, 0)
 		}
-		console.log("men quantityyyy",quantity)
+		
 
 
     

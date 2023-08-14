@@ -39,7 +39,7 @@ export default function CreateReview({ id }) {
   const submitRev = () => {
    
     setValidation(err)
-    console.log()
+    
     
     if (!Object.values(err).length) {
       setSub(true);
