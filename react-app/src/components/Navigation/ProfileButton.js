@@ -50,7 +50,7 @@ function ProfileButton({ user }) {
         {user ? (
           <>
             <div><NavLink to='/favorite'>Favorites</NavLink></div>
-            <div><NavLink to='/order'>Orders</NavLink></div>
+            {/* <div><NavLink to='/order'>Orders</NavLink></div> */}
             <div>
               <button onClick={handleLogout} className="logOut">Log out <i class="fa-solid fa-arrow-right-from-bracket"></i></button>
             </div>
