@@ -33,6 +33,7 @@ function FavoritesItemsPage(){
     return (
         <>
             <p className='pLength'>My Favorites({allFavItems.length})</p>
+            {!allFavItems.length && <p className='noFavItemP'>You have no items in your favorite page rigth now.</p>}
         <div className='allItemsDiv'>
             {allFavItems.map(ele=>
             <NavLink to={`/items/${ele.itemId}`}>
