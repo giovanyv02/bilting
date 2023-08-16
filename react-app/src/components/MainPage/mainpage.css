@@ -4,6 +4,7 @@ display: flex;
 }
 body{
     font-family: sans-serif;
+    margin-bottom: 0;
 }
 
 .firstImage{
