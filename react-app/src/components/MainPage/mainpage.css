@@ -1,10 +1,16 @@
 .mainPageDiv{
 display: flex;
     flex-direction: column;
+    padding-bottom: 20%
 }
 body{
     font-family: sans-serif;
     margin-bottom: 0;
+}
+#root{
+    position: relative;
+    min-height: 100vh;
+    font-size: larger;
 }
 
 .firstImage{

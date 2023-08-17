@@ -38,7 +38,7 @@ function Navigation({ isLoaded }){
 			<div className='nikelogo'>
 
 				<NavLink exact to="/">
-					<img src={nikeLogo} alt='nikeLogo' className='nikeLogo'/>
+					<img src='https://cdn.discordapp.com/attachments/1130957424296198224/1141787198182670386/nike-flowing-paint.jpg' alt='nikeLogo' className='nikeLogo'/>
 				</NavLink>
 			</div>
 			<div className='nav2Text'>

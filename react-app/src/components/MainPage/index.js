@@ -50,14 +50,7 @@ function MainPage(props) {
     return (
         <div className="mainPageDiv">
             <NavLink exact to='/new-arrival' className="newArrival"><p >Shop new Arrival</p></NavLink>
-            <div className="firstImageDiv">
-
-                <img src={firstImage} id='firstImage' alt="firstImage" className="firstImage" />
-            </div>
-            {/* <p>Become a nike Membership</p>
-            <div className="nikeMemberDiv">
-                <imag src={nikem} id='member' alt='nikemember' className="nikeMember"/>
-            </div> */}
+            
             <div >
                 <p className="shopBySport">Shop by sport</p>
                 <div className="sportDiv">
