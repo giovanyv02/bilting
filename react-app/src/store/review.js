@@ -49,7 +49,7 @@ export const deleteReview = (id) => async dispatch => {
         method: "POST"
     });
     if (res.ok) {
-        // dispatch(removeSpot(id));
+        
         dispatch(removeReview(id));
     }
 }

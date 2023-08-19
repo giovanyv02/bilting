@@ -2,7 +2,7 @@ from app.models import db, ItemImage, environment, SCHEMA
 from sqlalchemy.sql import text
 
 
-# Adds a demo user, you can add other users here if you want
+
 def seed_itemImages():
     itemImage1 = ItemImage(
        item_id = 1, url = 'https://cdn.discordapp.com/attachments/1130957424296198224/1130966629883318373/item1.png'

@@ -45,10 +45,10 @@ def seed():
     seed_favoriteItems()
     seed_orders()
     seed_orderItems()
-    # Add other seed functions here
+   
 
 
-# Creates the `flask seed undo` command
+
 @seed_commands.command('undo')
 def undo():
     undo_orderItems()
@@ -61,4 +61,4 @@ def undo():
     undo_users()
     
     
-    # Add other undo functions here
+    

@@ -146,9 +146,3 @@ export default function CreateReview({ id }) {
   )
 
 }
-// class ReviewForm(FlaskForm):
-//     itemId = IntegerField("ItemId", validation=[DataRequired])
-//     userId = IntegerField("UserId")
-//     review = StringField("Review", validation=[DataRequired])
-//     stars = IntegerField("Stars", validation=[DataRequired])
-//     reviewImage = StringField("ReviewImage")

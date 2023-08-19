@@ -2,7 +2,7 @@ from app.models import db, Order, environment, SCHEMA
 from sqlalchemy.sql import text
 
 
-# Adds a demo user, you can add other users here if you want
+
 def seed_orders():
     order1 = Order(
         address = "1503 jacmel ave.", user_id = 1, total = 6000

@@ -25,16 +25,13 @@ def addReview():
     form['csrf_token'].data = request.cookies['csrf_token']
     data = form.data
     if form.validate_on_submit():
-        # image = data['image']
-        # image.filename = get_unique_filename(image.filename)
-        # upload = upload_file_to_s3(image)
-        # print(upload)
+      
         newReview = Review(
             user_id = current_user.id,
             item_id = data['itemId'],
             review = data['review'],
             stars = data['stars'],
-            # image = upload['url']
+           
 
         )
         db.session.add(newReview)
