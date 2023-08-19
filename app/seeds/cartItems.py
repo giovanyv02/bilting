@@ -2,7 +2,7 @@ from app.models import db, CartItem, environment, SCHEMA
 from sqlalchemy.sql import text
 
 
-# Adds a demo user, you can add other users here if you want
+
 def seed_cartItems():
     cartItem1 = CartItem(
         quantity = 2, cart_id = 1, item_id= 1, size = 'M 3.5 / W 5'

@@ -10,7 +10,7 @@ class ReviewForm(FlaskForm):
     review = StringField("Review")
     stars = IntegerField("Stars")
     reviewImage = StringField("ReviewImage")
-    # reviewimage = FileField("Image File", validators=[FileAllowed(list(ALLOWED_EXTENSIONS))])
+   
 
 class OrderForm(FlaskForm):
     adress = StringField("Adress", validation=[DataRequired])
@@ -23,6 +23,6 @@ class CartItemForm(FlaskForm):
     item_id = IntegerField('ItemId') 
 
 class FavoriteItemForm(FlaskForm):
-    # fav_id = IntegerField('FavId')
+   
     item_id = IntegerField('ItemId')    
 

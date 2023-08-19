@@ -2,7 +2,7 @@ from app.models import db, OrderItem, environment, SCHEMA
 from sqlalchemy.sql import text
 
 
-# Adds a demo user, you can add other users here if you want
+
 def seed_orderItems():
     orderItem1 = OrderItem(
         item_id = 1, order_id = 1, quantity = 2

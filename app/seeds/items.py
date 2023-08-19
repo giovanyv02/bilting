@@ -2,7 +2,7 @@ from app.models import db, Item, environment, SCHEMA
 from sqlalchemy.sql import text
 
 
-# Adds a demo user, you can add other users here if you want
+
 def seed_items():
     item1 = Item(
         sex='man', category='shoe', featured='new arrival', sports='tennis', price=3000

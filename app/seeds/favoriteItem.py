@@ -2,7 +2,7 @@ from app.models import db, FavoriteItem, environment, SCHEMA
 from sqlalchemy.sql import text
 
 
-# Adds a demo user, you can add other users here if you want
+
 def seed_favoriteItems():
     favoriteItem1 = FavoriteItem(
          favorite_id = 1, item_id= 1
