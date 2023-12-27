@@ -54,3 +54,24 @@ padding: 0 5%;
 .nikeMemberDiv{
     
 }
+
+/* @media screen and (max-width: 803px) {
+    body{
+        background-color: blue;
+    }
+    .mainNav1 {
+        background-color: whitesmoke;
+        
+    }
+    .nav1 {
+        display: grid;
+        width: 100%;
+    }
+    .divText {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        align-items: baseline;
+        
+    }
+   } */

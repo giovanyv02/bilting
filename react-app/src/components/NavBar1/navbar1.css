@@ -32,8 +32,6 @@
 .nav1{
     display: flex;
     justify-content: space-between;
-    /* position: fixed; */
-    /* padding: 2%; */
     height: 30px;
     margin: 0 3%;
 }
@@ -52,3 +50,29 @@
     background-color: whitesmoke;
     border-bottom: 1px solid;
 }
+
+@media screen and (max-width: 853px) {
+  
+    .mainNav1 {
+        position: relative;
+    }
+    .nav1 {
+        display: block;
+    width: 94%;
+    height: 0%;
+    }
+    .divText {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        align-items: baseline;
+        
+    }
+    .divImg {
+        padding: 1%;
+        width: 98%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+   }
+   
