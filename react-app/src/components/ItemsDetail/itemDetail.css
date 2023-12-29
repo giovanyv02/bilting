@@ -79,3 +79,11 @@ display: grid;
     margin: 0;
     font-weight: bold;
 }
+@media screen and (max-width: 853px) {
+    .a{
+        grid-template-columns: 100%;
+        margin: 2% 10%;
+        }
+       
+   
+}
