@@ -54,3 +54,14 @@ padding: 0 5%;
 .nikeMemberDiv{
     
 }
+@media screen and (max-width:853px){
+.shopBySport{
+    margin: 2% 0;
+    display: flex;
+    justify-content: center;
+}
+.mainPageDiv{
+
+    padding-bottom: 55%;
+}
+}

@@ -26,3 +26,10 @@
     margin: 3%;
     font-size: x-large;
 }
+@media screen and (max-width: 853px) {
+    .allItemsDiv {
+        grid-row-gap: 5%;
+        grid-template-columns: 50% 50%;
+    }
+   
+}
