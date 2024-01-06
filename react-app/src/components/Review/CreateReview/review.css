@@ -40,3 +40,33 @@ width: 100%;
 #modal-content{
     border-radius: 100%;
 }
+
+@media screen and (max-width: 853px) {
+    .filled{
+       
+    }
+    
+    .revStar{
+      
+    }
+    
+    .createReviewDiv{
+   
+    }
+    .submitReviewButton{
+      
+    }
+    .reviewTextArea{
+    
+    }
+    .whiteLogo{
+       
+    }
+    .revLogo{
+      
+    }
+    #modal-content{
+        
+    }
+  
+}
