@@ -51,7 +51,7 @@ width: 100%;
     }
     
     .createReviewDiv{
-   
+        width: fit-content;
     }
     .submitReviewButton{
       
