@@ -16,10 +16,10 @@ You can take a look at Bilting [here](https://bilting.onrender.com)
 
 
 ## Products Page
-![product](https://cdn.discordapp.com/attachments/1130957424296198224/1140601633231884339/Screenshot_61.png)
+![product](https://cdn.discordapp.com/attachments/1130957424296198224/1140601633231884339/Screenshot_61.png?ex=65eee50c&is=65dc700c&hm=5262c335347b69ef07fa9b417e34dbf3ee758b8985116a950c29f8c834fbfcc8&)
 
 ## Reviews Page
-![Review](https://cdn.discordapp.com/attachments/1130957424296198224/1140601632984403978/Screenshot_62.png)
+![Review](https://cdn.discordapp.com/attachments/1130957424296198224/1140601632984403978/Screenshot_62.png?ex=65eee50c&is=65dc700c&hm=ba1e5283895f5290ef9677daf25d4882d95e7c6ccd45ba66ee324d4fa0212157&)
 
 ## Getting started
 1. Clone this repository:
