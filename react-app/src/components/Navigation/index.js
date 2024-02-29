@@ -16,7 +16,7 @@ function Navigation({ isLoaded }){
 	  const [run, setRun] = useState(true)
 
     const dispatch = useDispatch();
-   
+
         if (user && !cart[0] && run) {
             dispatch(theCart())
 			dispatch(theFav())
@@ -28,17 +28,17 @@ function Navigation({ isLoaded }){
 		if(cart[0]){
 			quantity = cart.reduce((a,b)=> a + b.quantity, 0)
 		}
-		
 
 
-    
+
+
 
 	return (
 		<div className='nav2'>
 			<div className='nikelogo'>
 
 				<NavLink exact to="/">
-					<img src='https://cdn.discordapp.com/attachments/1130957424296198224/1141787198182670386/nike-flowing-paint.jpg' alt='nikeLogo' className='nikeLogo'/>
+					<img src='https://cdn.discordapp.com/attachments/1130957424296198224/1141787198182670386/nike-flowing-paint.jpg?ex=65e9fab1&is=65d785b1&hm=cd621b408617d9f1bf17cce8ed5dd1ae6997d074847ceebeefeb89f8593e1a9d&' alt='nikeLogo' className='nikeLogo'/>
 				</NavLink>
 			</div>
 			<div className='nav2Text'>
@@ -55,13 +55,13 @@ function Navigation({ isLoaded }){
 			<i class="fas fa-cart-arrow-down">{quantity && quantity}</i>
 			</NavLink>
 			{sessionUser && (
-				
+
 					<ProfileButton user={sessionUser} />
-				
+
 			)}
 
 			</div>
-			
+
 		</div>
 	);
 }
