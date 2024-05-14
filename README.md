@@ -12,14 +12,14 @@ You can take a look at Bilting [here](https://bilting.onrender.com)
 <img src ="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/><img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" /><img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" /><img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" /><img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" /><img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" /><img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" /><img src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white" /><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
 
 ## Splash Page
-![splash](https://cdn.discordapp.com/attachments/1130957424296198224/1134283239683534930/Screenshot_58.png?ex=65ea5d96&is=65d7e896&hm=e611d936dd6882a521d62d7b5c801de9f737849b26329504426ad4f203dc0d08&)
+![splash](https://cdn.discordapp.com/attachments/1130957424296198224/1134283239683534930/Screenshot_58.png?ex=66440396&is=6642b216&hm=6e80b09b01317cc6c4ba833bf859298e311f7d09f8f5e6af729e57f4c9905942&)
 
 
 ## Products Page
-![product](https://cdn.discordapp.com/attachments/1130957424296198224/1140601633231884339/Screenshot_61.png?ex=65eee50c&is=65dc700c&hm=5262c335347b69ef07fa9b417e34dbf3ee758b8985116a950c29f8c834fbfcc8&)
+![product](https://cdn.discordapp.com/attachments/1130957424296198224/1140601633231884339/Screenshot_61.png?ex=6643edcc&is=66429c4c&hm=2d8fde94de684bcb02ec0a983e4a8e6254f1d8056c70784b26ade1b3e7f8c305&)
 
 ## Reviews Page
-![Review](https://cdn.discordapp.com/attachments/1130957424296198224/1140601632984403978/Screenshot_62.png?ex=65eee50c&is=65dc700c&hm=ba1e5283895f5290ef9677daf25d4882d95e7c6ccd45ba66ee324d4fa0212157&)
+![Review](https://cdn.discordapp.com/attachments/1130957424296198224/1140601632984403978/Screenshot_62.png?ex=6643edcc&is=66429c4c&hm=dc23c12a94c0dec56a34829cddee17891d4e0b46a9e758d1cfe0ce0b16dc81bb&)
 
 ## Getting started
 1. Clone this repository:
