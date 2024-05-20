@@ -4,6 +4,7 @@ from sqlalchemy.sql import text
 
 
 def seed_itemImages():
+    # hello
     itemImage1 = ItemImage(
        item_id = 1, url = 'https://cdn.discordapp.com/attachments/1130957424296198224/1130966629883318373/item1.png?ex=6643d040&is=66427ec0&hm=b40449db0bd82bbc5bd13ee7a9fba6da5af20cd9b9170f785ad072389d1859aa&'
     )
