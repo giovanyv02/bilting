@@ -5,26 +5,26 @@ from sqlalchemy.sql import text
 
 def seed_itemImages():
     itemImage1 = ItemImage(
-       item_id = 1, url = 'https://cdn.discordapp.com/attachments/1130957424296198224/1130966629883318373/item1.png?ex=6643d040&is=66427ec0&hm=b40449db0bd82bbc5bd13ee7a9fba6da5af20cd9b9170f785ad072389d1859aa&'
+       item_id = 1, url = 'https://postimg.cc/8sb2zxhs'
     )
     itemImage2 = ItemImage(
-       item_id = 2, url = 'https://cdn.discordapp.com/attachments/1130957424296198224/1130966630189510717/item2.png?ex=6643d040&is=66427ec0&hm=2346074a06d38149447425674890ed473a9d543a3d35ba09cf3449edccfc154d&'
+       item_id = 2, url = 'https://postimg.cc/bDYwZkFt'
 
     )
     itemImage3 = ItemImage(
-        item_id = 3, url = 'https://cdn.discordapp.com/attachments/1130957424296198224/1130966631418433709/item3.png?ex=6643d041&is=66427ec1&hm=030a60841b74c97cf689516b3b33989d0af551a1de1395e6bf4e67dffb00e030&'
+        item_id = 3, url = 'https://postimg.cc/F7xdHFK8'
 
     )
     itemImage4 = ItemImage(
-        item_id = 4, url = 'https://cdn.discordapp.com/attachments/1130957424296198224/1130966631703654541/item4.png?ex=6643d041&is=66427ec1&hm=777b1c3862668f0371be3ab6dcc758acae3f0638ef7a94194c207694ca9670da&'
+        item_id = 4, url = 'https://postimg.cc/0MxrsLsP'
 
     )
     itemImage5 = ItemImage(
-          item_id = 5, url = 'https://cdn.discordapp.com/attachments/1130957424296198224/1130966632018215023/item5.png?ex=6643d041&is=66427ec1&hm=da252351dc9e8fa64108bd0ee24db6b81ef59fa3f97666b5b3e1b3826c38f040&'
+          item_id = 5, url = 'https://postimg.cc/gX55RP2P'
 
     )
     itemImage6 = ItemImage(
-          item_id = 6, url = 'https://cdn.discordapp.com/attachments/1130957424296198224/1130966631129022605/item6.png?ex=6643d041&is=66427ec1&hm=fad89c0880507386e46f2ecadc1b37d91c14fabc99804a4d5f8ea4bfd4c38732&'
+          item_id = 6, url = 'https://postimg.cc/bdwkS278'
 
     )
     itemImage7 = ItemImage(
