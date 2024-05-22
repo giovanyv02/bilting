@@ -12,14 +12,14 @@ You can take a look at Bilting [here](https://bilting.onrender.com)
 <img src ="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/><img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" /><img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" /><img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" /><img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" /><img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" /><img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" /><img src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white" /><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
 
 ## Splash Page
-![splash](https://cdn.discordapp.com/attachments/1130957424296198224/1134283239683534930/Screenshot_58.png?ex=66440396&is=6642b216&hm=6e80b09b01317cc6c4ba833bf859298e311f7d09f8f5e6af729e57f4c9905942&)
+![splash](https://i.postimg.cc/FKBK3jtC/Screenshot-58.png)
 
 
 ## Products Page
-![product](https://cdn.discordapp.com/attachments/1130957424296198224/1140601633231884339/Screenshot_61.png?ex=6643edcc&is=66429c4c&hm=2d8fde94de684bcb02ec0a983e4a8e6254f1d8056c70784b26ade1b3e7f8c305&)
+![product](https://i.postimg.cc/j5DLFMQr/Screenshot-61.png)
 
 ## Reviews Page
-![Review](https://cdn.discordapp.com/attachments/1130957424296198224/1140601632984403978/Screenshot_62.png?ex=6643edcc&is=66429c4c&hm=dc23c12a94c0dec56a34829cddee17891d4e0b46a9e758d1cfe0ce0b16dc81bb&)
+![Review](https://i.postimg.cc/gJjY0rny/Screenshot-62.png)
 
 ## Getting started
 1. Clone this repository:
